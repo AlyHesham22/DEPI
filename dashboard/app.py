@@ -50,7 +50,7 @@ def load_and_clean_data(file_path):
     # Define age bins: 0-17 (Children), 18-35 (Young Adults), 36-55 (Middle-aged), 56+ (Seniors)
     age_bins = [0, 18, 36, 56, 120]
     age_labels = ['Children (0-17)', 'Young Adults (18-35)', 'Middle-aged (36-55)', 'Seniors (56+)']
-    df['AgeGroup'] = pd.cut(df['Age'], bins=age_bins, labels=age_labels, right=False, observed=False)
+    df['AgeGroup'] = pd.cut(df['Age'], bins=age_bins, labels=age_labels, right=False)
     
     # Convert 'No-show' column to binary (1 for No-show, 0 for Show)
     df['NoShow_Binary'] = (df['No-show'] == 'Yes').astype(int)
